@@ -24,7 +24,6 @@
 | **Text Bubble** | Highlight any text and a floating AI action bubble appears instantly |
 | **AI Sidebar** | A full chat panel accessible from any tab |
 | **Right-Click Menu** | Context menu options on selected text |
-| **Multiple Models** | Llama 3.1 8B, Llama 3.3 70B, Mixtral 8x7B, Gemma 2 9B |
 | **Privacy First** | Your API key is stored locally in Chrome — never sent to any server |
 | **100% Free** | Uses Groq's free-tier API — no credit card needed |
 
@@ -111,20 +110,6 @@ quickAI/
 
 ---
 
-## Supported AI Models
-
-| Model | Speed | Intelligence | Best For |
-|---|---|---|---|
-| **Llama 3.1 8B** (default) | Fastest | Good | Quick tasks, summaries |
-| **Llama 3.3 70B** | Moderate | Highest | Complex analysis, writing |
-| **Llama 3.1 70B** | Moderate | High | Balanced tasks |
-| **Mixtral 8x7B** | Fast | Good | Long documents |
-| **Gemma 2 9B** | Fast | Good | Efficient processing |
-
-Switch models anytime from the **popup** via the AI Model dropdown.
-
----
-
 ## How the Extension Works (Technical)
 
 ```
@@ -173,7 +158,6 @@ User highlights text
 - Press **Enter** to send in the sidebar, **Shift+Enter** for a new line
 - Use **Quick Action buttons** in the sidebar for page-level prompts
 - Use **right-click** for context menu shortcuts
-- Switch to a **larger model** (70B) for complex questions
 
 ---
 
@@ -185,7 +169,6 @@ User highlights text
 | Invalid API Key error | Double-check you copied the full key from console.groq.com |
 | Bubble not appearing | Reload the webpage after installing the extension |
 | Sidebar not opening | Try clicking the toolbar icon to open it manually |
-| Slow responses | Switch to **Llama 3.1 8B** (fastest model) in the popup |
 
 ---
 

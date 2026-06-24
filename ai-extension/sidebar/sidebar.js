@@ -2,23 +2,19 @@
   'use strict';
 
   let apiKey = '';
-  let model  = 'llama-3.1-8b-instant';
   let history = [];
 
   const chatEl   = document.getElementById('chat');
   const inputEl  = document.getElementById('chatInput');
   const sendBtn  = document.getElementById('sendBtn');
-  const badgeEl  = document.getElementById('modelBadge');
 
   // Load saved settings
-  chrome.storage.local.get(['groqApiKey', 'groqModel'], function(data) {
+  chrome.storage.local.get(['groqApiKey'], function(data) {
     if (!data.groqApiKey) {
       showNoKey();
       return;
     }
     apiKey = data.groqApiKey;
-    model  = data.groqModel || 'llama-3.1-8b-instant';
-    badgeEl.textContent = model.split('-').slice(0,2).join('-');
     addMessage('ai', 'Hi! I\'m QuickAI. Highlight text on any page and I\'ll explain, rewrite, or summarize it. Or just ask me anything!');
   });
 
@@ -81,7 +77,7 @@
     ].concat(history.slice(-10));
 
     chrome.runtime.sendMessage(
-      { type: 'GROQ_API_CALL', payload: { apiKey: apiKey, model: model, messages: messages } },
+      { type: 'GROQ_API_CALL', payload: { apiKey: apiKey, model: 'llama-3.1-8b-instant', messages: messages } },
       function(res) {
         if (thinkingEl && thinkingEl.parentNode) thinkingEl.remove();
         sendBtn.disabled = false;

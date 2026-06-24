@@ -2,20 +2,17 @@
   'use strict';
 
   var apiKeyEl = document.getElementById('apiKey');
-  var modelEl  = document.getElementById('model');
   var statusEl = document.getElementById('status');
   var saveBtn  = document.getElementById('saveBtn');
 
-  // Load saved values
-  chrome.storage.local.get(['groqApiKey', 'groqModel'], function(data) {
+  // Load saved key
+  chrome.storage.local.get(['groqApiKey'], function(data) {
     if (data.groqApiKey) apiKeyEl.value = data.groqApiKey;
-    if (data.groqModel)  modelEl.value  = data.groqModel;
   });
 
   // Save and verify key
   saveBtn.addEventListener('click', function() {
-    var key   = apiKeyEl.value.trim();
-    var model = modelEl.value;
+    var key = apiKeyEl.value.trim();
 
     if (!key.startsWith('gsk_')) {
       showStatus('Key must start with gsk_', 'err');
@@ -25,7 +22,6 @@
     saveBtn.textContent = 'Verifying...';
     saveBtn.disabled = true;
 
-    // Test with current active model
     fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -43,7 +39,7 @@
       if (data.error) {
         showStatus('Error: ' + data.error.message, 'err');
       } else {
-        chrome.storage.local.set({ groqApiKey: key, groqModel: model });
+        chrome.storage.local.set({ groqApiKey: key });
         showStatus('Key verified! QuickAI is ready.', 'ok');
       }
     })
@@ -54,11 +50,6 @@
       saveBtn.textContent = 'Save & Verify Key';
       saveBtn.disabled = false;
     });
-  });
-
-  // Model change — save immediately
-  modelEl.addEventListener('change', function() {
-    chrome.storage.local.set({ groqModel: modelEl.value });
   });
 
   // Open sidebar

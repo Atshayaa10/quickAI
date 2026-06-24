@@ -15,7 +15,6 @@ body { width:300px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans
 .api-input:focus { border-color:#111; }
 .save-btn { width:100%; margin-top:8px; background:#111; color:#fff; border:none; border-radius:8px; padding:10px; font-size:13px; font-weight:600; cursor:pointer; transition:opacity 0.2s; }
 .save-btn:hover { opacity:0.85; }
-.model-select { width:100%; border:1.5px solid #e0e0e0; border-radius:8px; padding:8px 12px; font-size:13px; outline:none; background:#fff; cursor:pointer; }
 .status { font-size:12px; margin-top:8px; padding:7px 10px; border-radius:6px; display:none; }
 .status.ok  { background:#f0faf0; color:#1a7a44; display:block; }
 .status.err { background:#fff0f0; color:#c0392b; display:block; }
@@ -41,16 +40,6 @@ body { width:300px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans
   <button class="save-btn" id="saveBtn">Save &amp; Verify Key</button>
 </div>
 
-<div class="section">
-  <div class="label">AI Model</div>
-  <select class="model-select" id="model">
-    <option value="llama-3.1-8b-instant">Llama 3.1 8B — Fast</option>
-    <option value="llama-3.3-70b-versatile">Llama 3.3 70B — Smart</option>
-    <option value="llama-3.1-70b-versatile">Llama 3.1 70B — Balanced</option>
-    <option value="mixtral-8x7b-32768">Mixtral 8x7B — Long context</option>
-    <option value="gemma2-9b-it">Gemma 2 9B — Efficient</option>
-  </select>
-</div>
 
 <button class="open-sidebar" id="openSidebar">Open AI Sidebar</button>
 
