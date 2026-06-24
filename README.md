@@ -203,9 +203,3 @@ User highlights text
 ## License
 
 MIT License — free to use, modify, and distribute.
-
----
-
-<p align="center">
-  Made with care | Powered by <a href="https://groq.com">Groq</a>
-</p>
