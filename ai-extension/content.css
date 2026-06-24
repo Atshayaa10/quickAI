@@ -1,0 +1,27 @@
+#quickai-bubble {
+  position: absolute;
+  z-index: 2147483647;
+  background: #111111;
+  border-radius: 10px;
+  padding: 6px 8px;
+  display: flex;
+  gap: 4px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+  animation: qai-pop 0.15s ease;
+}
+@keyframes qai-pop {
+  from { opacity:0; transform:scale(0.88) translateY(4px); }
+  to   { opacity:1; transform:scale(1) translateY(0); }
+}
+.qai-btn {
+  color: #fff;
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+  user-select: none;
+}
+.qai-btn:hover { background: #2a2a2a; }
