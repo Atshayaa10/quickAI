@@ -44,7 +44,7 @@
         showStatus('Error: ' + data.error.message, 'err');
       } else {
         chrome.storage.local.set({ groqApiKey: key, groqModel: model });
-        showStatus('✓ Key verified! QuickAI is ready.', 'ok');
+        showStatus('Key verified! QuickAI is ready.', 'ok');
       }
     })
     .catch(function(e) {

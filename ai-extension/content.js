@@ -20,10 +20,10 @@ function showBubble(x, y, text) {
   bubble = document.createElement("div");
   bubble.id = "quickai-bubble";
   bubble.innerHTML = `
-    <div class="qai-btn" data-action="explain">💡 Explain</div>
-    <div class="qai-btn" data-action="rewrite">✍️ Rewrite</div>
-    <div class="qai-btn" data-action="summarize">📝 Summarize</div>
-    <div class="qai-btn" data-action="reply">💬 Reply</div>
+    <div class="qai-btn" data-action="explain">Explain</div>
+    <div class="qai-btn" data-action="rewrite">Rewrite</div>
+    <div class="qai-btn" data-action="summarize">Summarize</div>
+    <div class="qai-btn" data-action="reply">Reply</div>
   `;
   bubble.style.left = Math.min(x, window.innerWidth - 240) + "px";
   bubble.style.top = (y + window.scrollY - 55) + "px";

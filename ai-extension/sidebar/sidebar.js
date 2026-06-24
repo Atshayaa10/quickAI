@@ -19,7 +19,7 @@
     apiKey = data.groqApiKey;
     model  = data.groqModel || 'llama-3.1-8b-instant';
     badgeEl.textContent = model.split('-').slice(0,2).join('-');
-    addMessage('ai', '👋 Hi! I\'m QuickAI. Highlight text on any page and I\'ll explain, rewrite, or summarize it. Or just ask me anything!');
+    addMessage('ai', 'Hi! I\'m QuickAI. Highlight text on any page and I\'ll explain, rewrite, or summarize it. Or just ask me anything!');
   });
 
   // Quick action buttons
